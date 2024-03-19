@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Clash</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    <body>
+
+        <main class="min-h-screen bg-[#010313] bg-[url('images/background.png')] bg-no-repeat bg-center">
+            <!-- start home screen  -->
+            <section id="home-screen" class="">
+                <div class="flex flex-col justify-center items-center min-h-screen gap-8">
+                    <h1 class="font-anton text-9xl text-white">ALPHABET CLASH</h1>
+                    <p class="font-poppins font-medium text-2xl text-white">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                    <button onclick="play()" class="leading-normal bg-white font-semibold text-2xl text-black px-6 py-3 rounded-md hover:bg-orange-400 hover:text-white">Play Now</button>
+                </div>
+            </section>
+            <!-- end home screen  -->
+
+            <!-- start playground section -->
+            <section id="playGround" class="play-ground hidden">
+                <div class="flex flex-col gap-20 pt-20">
+                    <!-- playground screen  -->
+                    <div class="flex justify-center">
+                        <div class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313CC] bg-[#FFFFFFB3] rounded-2xl">
+                            <div class="flex justify-center">
+                                <p class="bg-[#2F2941] font-poppins text-lg font-medium text-white px-7 pb-5 rounded-b-2xl">Don't watch keyboard  while playing...</p>
+                            </div>
+                            <div class="flex justify-center items-center h-full">
+                                <p id="randomAlphabet" class="font-poppins font-semibold text-9xl text-[#010313] uppercase">y</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- playground keyboard  -->
+                    <div>
+                        <div class="flex justify-center gap-1 my-1 w-full">
+                            <kbd id="q" class="kbd">q</kbd>
+                            <kbd id="w" class="kbd">w</kbd>
+                            <kbd id="e" class="kbd">e</kbd>
+                            <kbd id="r" class="kbd">r</kbd>
+                            <kbd id="t" class="kbd">t</kbd>
+                            <kbd id="y" class="kbd">y</kbd>
+                            <kbd id="u" class="kbd">u</kbd>
+                            <kbd id="i" class="kbd">i</kbd>
+                            <kbd id="o" class="kbd">o</kbd>
+                            <kbd id="p" class="kbd">p</kbd>
+                          </div> 
+                          <div class="flex justify-center gap-1 my-1 w-full">
+                            <kbd id="a" class="kbd">a</kbd>
+                            <kbd id="s" class="kbd">s</kbd>
+                            <kbd id="d" class="kbd">d</kbd>
+                            <kbd id="f" class="kbd">f</kbd>
+                            <kbd id="g" class="kbd">g</kbd>
+                            <kbd id="h" class="kbd">h</kbd>
+                            <kbd id="j" class="kbd">j</kbd>
+                            <kbd id="k" class="kbd">k</kbd>
+                            <kbd id="l" class="kbd">l</kbd>
+                          </div> 
+                          <div class="flex justify-center gap-1 my-1 w-full">
+                            <kbd id="z" class="kbd">z</kbd>
+                            <kbd id="x" class="kbd">x</kbd>
+                            <kbd id="c" class="kbd">c</kbd>
+                            <kbd id="v" class="kbd">v</kbd>
+                            <kbd id="b" class="kbd">b</kbd>
+                            <kbd id="n" class="kbd">n</kbd>
+                            <kbd id="m" class="kbd">m</kbd>
+                            <kbd id="/" class="kbd">/</kbd>
+                          </div>
+                    </div>
+
+                    <!-- playground button  -->
+                    <div class="flex items-center justify-between w-3/4 m-auto">
+                        <button class="font-inter font-medium text-xl  flex items-center bg-[url('images/bg-btn.svg')] bg-no-repeat bg-cover rounded-full text-white px-8 py-4">
+                            Life
+                           <img class="mx-2" src="images/heart.svg" alt="Heart">
+                           <span id="lifePoint">5</span>
+                        </button>
+
+                        <button class="font-inter font-medium text-xl  flex items-center bg-[#360490] rounded-full text-white px-8 py-4">
+                            Score
+                           <img class="mx-2" src="images/dollor.svg" alt="Heart">
+                           <span id="gameScore">0</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+            <!-- end playground section -->
+
+            <!-- start final score  -->
+            <section id="showScore" class="score flex flex-col items-center justify-center min-h-screen hidden">
+                <div class="text-center space-y-6 bg-[#FFFFFF33] px-8 py-5 rounded-2xl">
+                    <h5 class="font-poppins font-bold text-3xl text-white text-center">Game Over</h5>
+                    <h2 class="font-poppins font-extrabold text-6xl text-white">Score : <span id="finalScore" class="font-medium">14</span></h2>
+                    <button onclick="playAgain()" class="leading-normal bg-white font-semibold text-2xl text-black px-6 py-3 rounded-md hover:bg-orange-400 hover:text-white">Play Again</button>
+                    <p class="font-poppins text-xl text-white">Practice will  make you a Pro</p>
+                </div>
+            </section>
+            <!-- end final score  -->
+
+
+        </main>
+
+        <script src="scripts/utility.js"></script>
+        <script src="scripts/alpha.js"></script>
+
+
+    </body>
+
+</html>
