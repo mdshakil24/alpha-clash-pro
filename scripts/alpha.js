@@ -12,14 +12,41 @@
 //     // playGround.classList.remove('hidden');
 // }
 
+//===== 1st function for play
+function play() {
+    //===== Start First Step For Start The Game
+    hideElementById('home-screen');
+    showElementById('playGround');
+    //===== End First Step For Start The Game
+
+    //=====
+    continueGame();
+}
+
+function continueGame() {
+    // step-1: generate a random alphabet
+    const alphabet = getARandomAlphabet();
+
+    // set randomly generated alphabet to the screen (show it)
+    const displayAlphabet = document.getElementById('randomAlphabet');
+    displayAlphabet.innerText = alphabet;
+
+    // set the high light background on key by ID
+    setBackgroundHighlight(alphabet);
+
+}
+
 
 function handleKeyboardButtonPress(e) {
     // player pressed key
     const playerPressed = e.key;
+    
 
     // get the expected key to press
     const currentAlphabetElement = document.getElementById('randomAlphabet').innerText;
     const expectedAlphabet = currentAlphabetElement.toLowerCase();
+
+    console.log(playerPressed, 'and', expectedAlphabet);
 
     // check right and wrong key pressed
     if(playerPressed === expectedAlphabet) {
@@ -27,8 +54,9 @@ function handleKeyboardButtonPress(e) {
         continueGame();
         removeBackgroundHighlight(expectedAlphabet);
 
-        // Update the score by 3 step:
-
+        // Using it without function -------------------------------------------------------------------
+        
+        //--- Update the score by 3 step:
         // 1. get the current score
         const currentScoreElement = document.getElementById('gameScore');
         const currentScoreText = currentScoreElement.innerText;
@@ -68,25 +96,9 @@ function handleKeyboardButtonPress(e) {
 // capture keyboard key press 
 document.addEventListener('keyup',handleKeyboardButtonPress);
 
-function continueGame() {
-    // step-1: generate a random alphabet
-    const alphabet = getARandomAlphabet();
 
-    // set randomly generated alphabet to the screen (show it)
-    const displayAlphabet = document.getElementById('randomAlphabet');
-    displayAlphabet.innerText = alphabet;
 
-    // set the high light background on key by ID
-    setBackgroundHighlight(alphabet)
 
-}
-
-function play() {
-    hideElementById('home-screen');
-    showElementById('playGround');
-    continueGame();
-
-}
 
 function gameOver() {
     // when the life is finished then hide the play ground
