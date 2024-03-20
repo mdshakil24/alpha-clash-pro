@@ -7,7 +7,7 @@ function hideElementById(elementId) {
 function showElementById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
-}
+} 
 //===== End First Step For Start The Game
 
 //===== Start Set and Remove the highlight background on the keyboard key
@@ -36,3 +36,28 @@ function getARandomAlphabet() {
     return alphabet;
 }
 //===== End Get a Random Alphabet Function
+
+
+//===== Start Take Update Score and Life utility function 
+function getElementValueById(elementId) {
+    const element = document.getElementById(elementId);
+    const elementText = element.innerText;
+    const value = parseInt(elementText);
+    return value;
+}
+//===== End Take Update Score and Life utility function
+
+//===== Start Show Element Value by id
+function setElementValueById(elementId,value) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+//===== End Show Element Value by id
+
+//===== Start Get Element Text by id
+function getElementTextById(elementId) {
+    const element = document.getElementById(elementId);
+    const elementText = element.innerText;
+    return elementText;
+}
+//===== End Get Element Text by id
