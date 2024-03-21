@@ -28,7 +28,7 @@ function play() {
     showElementById('playGround');
     //===== End First Step For Start The Game
 
-    
+
 
     //===== When click play again then hide the score section
     hideElementById('showScore')
@@ -39,6 +39,8 @@ function play() {
 
     //===== Continue game 
     continueGame();
+
+   
 }
 
 function continueGame() {
@@ -52,19 +54,19 @@ function continueGame() {
     // set the high light background on key by ID
     setBackgroundHighlight(alphabet);
 
-    document.addEventListener('keyup',function(e){
+    document.addEventListener('keyup', function (e) {
         const keyDetect = e.key;
 
-      // stop the game if pressed 'Esc'
-       if(keyDetect === 'Escape'){
+        // stop the game if pressed 'Esc'
+        if (keyDetect === 'Escape') {
             gameOver();
-       }
-       
+        }
+
     });
 
 
 
-    
+
 
 
 
@@ -76,10 +78,6 @@ function handleKeyboardButtonPress(e) {
     // player pressed key
     const playerPressed = e.key;
 
-    console.log('you press', playerPressed);
-
-
-
     // get the expected key to press
     const currentAlphabetElement = getElementTextById('randomAlphabet');
     const expectedAlphabet = currentAlphabetElement.toLowerCase();
@@ -88,9 +86,7 @@ function handleKeyboardButtonPress(e) {
 
     // check right and wrong key pressed
     if (playerPressed === expectedAlphabet) {
-        // start a new round
-        continueGame();
-        removeBackgroundHighlight(expectedAlphabet);
+
 
         // step-1: get the current score
         const theScore = getElementValueById('gameScore');
@@ -112,6 +108,11 @@ function handleKeyboardButtonPress(e) {
         // console.log('new score', newScore)
         // 3. show the updated score
         // currentScoreElement.innerText = newScore;
+
+
+        // start a new alphabet round
+        continueGame();
+        removeBackgroundHighlight(expectedAlphabet);
 
     }
 
@@ -164,6 +165,15 @@ function gameOver() {
     // clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById('randomAlphabet');
     removeBackgroundHighlight(currentAlphabet);
+
+    document.addEventListener('keypress',function(event){
+        const pressEnter = event.key;
+        console.log(pressEnter)
+        if(pressEnter === 'q') {
+            document.getElementById('playAgain').click();
+        }
+
+    });
 
 
 
