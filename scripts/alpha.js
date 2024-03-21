@@ -166,14 +166,14 @@ function gameOver() {
     const currentAlphabet = getElementTextById('randomAlphabet');
     removeBackgroundHighlight(currentAlphabet);
 
-    document.addEventListener('keypress',function(event){
-        const pressEnter = event.key;
-        console.log(pressEnter)
-        if(pressEnter === 'Enter') {
-            document.getElementById('playAgain').click();
-        }
+    // document.addEventListener('keypress',function(event){
+    //     const pressEnter = event.key;
+    //     if(pressEnter === 'Enter') {
+    //         document.getElementById('playAgain').click();
+    //         continueGame();
+    //     }
 
-    });
+    // });
 
 
 
