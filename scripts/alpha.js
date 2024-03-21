@@ -169,7 +169,7 @@ function gameOver() {
     document.addEventListener('keypress',function(event){
         const pressEnter = event.key;
         console.log(pressEnter)
-        if(pressEnter === 'q') {
+        if(pressEnter === 'Enter') {
             document.getElementById('playAgain').click();
         }
 
